@@ -1,0 +1,10 @@
+<h1>Welcome to your portfolios </h1>
+
+<h3>Here is the name of your portfolio: <%= @portfolio.portfolio_name  %></h3>
+
+<h3>This is the amount of initial cash investment you have for this portfolio: $<%= @portfolio.initial_cash %></h3>
+
+<h3>Here are all your investments for this portfolio:</h3>
+<% @portfolio.investments.each do |investment| %>
+    <%= investment.purchase_date  %>
+<% end %>
