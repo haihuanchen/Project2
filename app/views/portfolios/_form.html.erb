@@ -1,0 +1,9 @@
+<%= form_for @portfolio do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :user_id %>
+    <%= f.collection_select(:user_id, @users, :id, :name, prompt: true) %>
+    
+    <%= f.submit %>
+<% end %>
