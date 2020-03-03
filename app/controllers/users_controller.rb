@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(params[user_params])
         @user.save 
-        redirect_to portfolio_path(@user.portfolios)
+        redirect_to user_portfolios_path(@user)
     end
 
     private

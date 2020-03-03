@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :investments
   resources :reviews
-  resources :stocks
   resources :portfolios
-  resources :users
+  resources :stocks
+  resources :investments
+  resources :users do
+    resources :portfolios
+  end
 
   # get "/login", to: "sessions#new"
   # post "/login", to: "sessions#create"
