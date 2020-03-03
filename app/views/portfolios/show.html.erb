@@ -5,6 +5,12 @@
 <h3>This is the amount of initial cash investment you have for this portfolio: $<%= @portfolio.initial_cash %></h3>
 
 <h3>Here are all your investments for this portfolio:</h3>
-<% @portfolio.investments.each do |investment| %>
-    <%= investment.purchase_date  %>
+<% @portfolio.stocks.each do |stock| %>
+    <h3>Stock Name: <%= stock.stock_name %></h3>
+    Current Price: <%= stock.current_price %> <br>
 <% end %>
+<% @portfolio.investments.each do |investment| %>
+    <h3>Purchased Price: <%=investment.purchase_price %> </h3>
+    <h3>Number of shares owned: <%= investment.num_of_shares %></h3> <br>
+<% end %>
+
