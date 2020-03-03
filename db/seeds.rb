@@ -27,7 +27,7 @@ end
     Review.create(
         title: Faker::Book.title,
         content: Faker::Quotes::Shakespeare.hamlet_quote,
-        rating: rand(1.0..10.0),
+        ratings: rand(1.0..10.0),
         user_id: User.all.sample.id,
         portfolio_id: Portfolio.all.sample.id
     )
