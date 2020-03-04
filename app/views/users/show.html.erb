@@ -1,20 +1,16 @@
-<h1>Sign Up</h1>
+<h1>Welcome <%= @user.full_name %></h1>
+<h5><%= link_to "Create a new portfolio", new_portfolio_path %></h5>
+<h3>You currently have these portfolios:</h3>
 
-<%= form_for @user do |f|%>
-<%=f.label :first_name, "First Name"%>
-<%=f.text_field :first_name%>
-
-<%=f.label :last_name, "Last Name"%>
-<%=f.text_field :last_name%>
-
-<%=f.label :address, "User Name"%>
-<%=f.text_field :user_name%>
-
-<%=f.label :rent_per_floor, "Password"%>
-<%=f.password_field :password%>
-
-<%=f.label :number_of_floors, "Email"%>
-<%=f.text_field :email%>
-
-<%= f.submit %>
-<%end%>
+<table>
+<tr>
+<th>Portfolio Name </th>
+<th>Initial Cash </th>
+</tr>
+<tr>
+<% @user.portfolios.each do |portfolio|%>
+    <td><%= link_to portfolio.portfolio_name, portfolio %></td> 
+    <td> $<%= portfolio.initial_cash  %></td>
+</tr>
+<% end %>
+</table>

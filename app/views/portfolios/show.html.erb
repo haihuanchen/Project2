@@ -1,17 +1,30 @@
-<h1>Welcome to your portfolios </h1>
-
-<h3>Here is the name of your portfolio: <%= @portfolio.portfolio_name  %></h3>
-
-<h3>This is the amount of initial cash investment you have for this portfolio: $<%= @portfolio.initial_cash %></h3>
-
+<h1>Welcome to <%= @portfolio.portfolio_name %> </h1>
+<%= link_to  "Add Investment", new_stock_path %>
 <h3>Here are all your investments for this portfolio:</h3>
-<% @portfolio.stocks.each do |stock| %>
-    <h3>Stock Name: <%= stock.stock_name %></h3>
-    Current Price: <%= stock.current_price %> <br>
+<table>
+<tr>
+<th>Stock Name </th>
+<th>Current Price </th>
+<th>Purchased Price</th>
+<th>Number of shares owned</th>
+</tr>
+<tr>
+<% @data.each do |d| %>
+    <td> <%= d.first %> </td>
+    <td> $<%=d.second  %> </td>
+    <td> $<%=d.third  %> </td>
+    <td> <%=d.fourth  %> </td>
+</tr>
 <% end %>
-<% @portfolio.investments.each do |investment| %>
-    <h3>Purchased Price: <%=investment.purchase_price %> </h3>
-    <h3>Number of shares owned: <%= investment.num_of_shares %></h3> <br>
+</table>
+<h1>These are the current reviews of this portfolio</h1>
+<ol>
+<% @portfolio.reviews.each do |review| %>
+    <h3>Title: <%= review.title %></h3>
+    <p><%= review.content %></p>
+    <p>Ratings: <%= review.ratings %></p>
 <% end %>
-<%= link_to  "Review this Portfolio", new_review_path %>
+</ol>
 
+<%= link_to  "Add a review for this Portfolio", new_review_path %>
+<%= button_to "Delete this Portfolio", portfolio_path(@portfolio), method: :delete %>
