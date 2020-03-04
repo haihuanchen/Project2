@@ -1,7 +1,9 @@
 class PortfoliosController < ApplicationController
     before_action :find_portfolio, only: [:show, :edit, :update, :destroy]
+
     def index
-        @portfolios = Portfolio.where("user_id = ?",params[:user_id])
+        @portfolios = User.find(params[:user_id]).portfolios
+
     end
 
     def show
@@ -15,7 +17,7 @@ class PortfoliosController < ApplicationController
 
     def create
         @portfolio = Portfolio.create(portfolio_params)
-        redirect_to @portfolio
+        redirect_to user_path(@portfolio.user)
     end
 
     def edit
@@ -29,7 +31,7 @@ class PortfoliosController < ApplicationController
 
     def destroy
         @portfolio.destroy
-        redirect_to portfolios_path
+        redirect_to users_path
     end
 
     private
@@ -40,6 +42,7 @@ class PortfoliosController < ApplicationController
 
     def find_portfolio
         @portfolio = Portfolio.find(params[:id])
+        @data = @portfolio.array_data
     end
 
 end
