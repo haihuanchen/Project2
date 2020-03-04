@@ -2,8 +2,9 @@ class PortfoliosController < ApplicationController
     before_action :find_portfolio, only: [:show, :edit, :update, :destroy]
 
     def index
-        @portfolios = User.find(params[:user_id]).portfolios
 
+        @portfolios = User.find(params[:user_id]).portfolios
+      
     end
 
     def show
