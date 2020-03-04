@@ -57,5 +57,4 @@
 
 200.times do 
     Investment.create(purchase_price: rand(10..300), num_of_shares: rand(10..100), purchase_date: "2020-01-01",portfolio_id: Portfolio.all.sample.id, stock_id: Stock.all.sample.id)
-
 end

@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
     before_action :find_portfolio, only: [:show, :edit, :update, :destroy]
     def index
-        @portfolios = Portfolio.where("user_id = ?",params[:user_id])
+        @portfolios = Portfolio.where("user_id = ?", params[:user_id])
     end
 
     def show

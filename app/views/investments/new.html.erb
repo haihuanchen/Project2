@@ -1,0 +1,11 @@
+<%= form_for @investment do |f| %>
+
+Portfolio: <%= collection_select(:portfolio, :id, @portfolios, :id, :portfolio_name) %>
+<br>
+Stock: <%= collection_select(:stock, :id, @stocks, :id, :stock_name) %>
+<br>
+<%= f.label :purchase_price, "Price" %>
+<%= f.number_field (:purchase_price) %>
+
+<%= f.submit %>
+<% end %>

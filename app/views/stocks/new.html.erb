@@ -1,0 +1,14 @@
+  <h1>Add Stock</h1>
+
+<%= form_for @stock do |f|%>
+<%=f.label :ticker_symbol, "Ticker"%>
+<%=f.text_field :ticker_symbol%>
+
+<%=f.label :stock_name, "Stock"%>
+<%=f.text_field :stock_name%>
+
+<%= f.submit "Add" %>
+
+<%= link_to "Buy Shares", new_investment_path%>
+
+<% end %>
