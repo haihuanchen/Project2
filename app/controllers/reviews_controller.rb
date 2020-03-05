@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     def new
         @review = Review.new
         @users = User.all
-        @portfolios = Portfolio.all
+        @portfolio = Portfolio.find(params[:portfolio_id])
     end
 
     def create

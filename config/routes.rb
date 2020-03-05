@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :stocks, only: [:new, :create]
   resources :investments
 
+  post 'reviews/new', to: 'reviews#new'
+
   # get "/login", to: "sessions#new"
   # post "/login", to: "sessions#create"
 

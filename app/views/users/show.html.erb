@@ -9,7 +9,7 @@
 </tr>
 <tr>
 <% @user.portfolios.each do |portfolio|%>
-    <td><%= link_to portfolio.portfolio_name, portfolio %></td> 
+    <td><%= link_to portfolio.portfolio_name, portfolio%>
     <td> $<%= portfolio.initial_cash  %></td>
 </tr>
 <% end %>
