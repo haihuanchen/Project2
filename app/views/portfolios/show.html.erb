@@ -1,4 +1,4 @@
-<h1>Welcome to <%= @portfolio.portfolio_name %> </h1>
+<h1>Portfolio Name: <%= @portfolio.portfolio_name %> </h1>
 <%= link_to  "Add Investment", new_stock_path %>
 <h3>Here are all your investments for this portfolio:</h3>
 <table>
@@ -23,8 +23,9 @@
     <h3>Title: <%= review.title %></h3>
     <p><%= review.content %></p>
     <p>Ratings: <%= review.ratings %></p>
+    <%= button_to  "Delete this review", review_path(review), method: :delete %>
 <% end %>
 </ol>
-
-<%= link_to  "Add a review for this Portfolio", new_review_path %>
+<%= link_to  "Return to Main Menu", users_path %>
+<%= button_to  "Add a review for this Portfolio", new_review_path, method: :new, params: {portfolio_id: @portfolio.id} %>
 <%= button_to "Delete this Portfolio", portfolio_path(@portfolio), method: :delete %>

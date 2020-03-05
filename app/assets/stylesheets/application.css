@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+ /* .stock-image{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://content.fortune.com/wp-content/uploads/2019/10/GettyImages-1158402857.jpg?resize=1500,1000');
+    background-size: 100%;
+    background-repeat: no-repeat;
+ } */
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.gannett-cdn.com/-mm-/3b8b0abcb585d9841e5193c3d072eed1e5ce62bc/c=0-30-580-356/local/-/media/2018/09/11/USATODAY/usatsports/getty-stock-market-rising_large.jpg?width=580&height=326&fit=crop&format=pjpg&auto=webp');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: palegoldenrod;
+
+}
+a {
+    color:peachpuff ;
+    font-size: large;
+}
