@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    # has_secure_password
+    # attr_reader :password
     before_action :find_user, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -15,6 +17,8 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
+        @user.save
+        session[:user_id] = @user.id
         redirect_to user_path(@user)
     end
 
@@ -31,6 +35,18 @@ class UsersController < ApplicationController
         @user.destroy
         redirect_to users_path
     end
+
+    # def password=(plain_text_pw)
+    #     self.password_digest = BCrypt::Password.create(plain_text_pw)
+    # end
+
+    # def authenticate
+    #     if BCrypt::Password.new(self.password_digest) == ptpw
+    #         @user
+    #     else
+    #         false
+    #     end
+    # end
 
     private
 

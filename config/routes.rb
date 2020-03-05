@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :stocks, only: [:new, :create]
   resources :investments
 
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  # delete 'logout', to: "sessions#destroy", as "logout"
   post 'reviews/new', to: 'reviews#new'
 
   # get "/login", to: "sessions#new"

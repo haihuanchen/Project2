@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
     def index
 
         @portfolios = User.find(params[:user_id]).portfolios
-      
+
     end
 
     def show
