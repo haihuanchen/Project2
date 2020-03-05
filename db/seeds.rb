@@ -23,16 +23,16 @@
 #         user_id: User.all.sample.id
 #     )
 # end
-
-# 20.times do 
-#     Review.create(
-#         title: Faker::Book.title,
-#         content: Faker::Quotes::Shakespeare.hamlet_quote,
-#         ratings: rand(1.0..10.0),
-#         user_id: User.all.sample.id,
-#         portfolio_id: Portfolio.all.sample.id
-#     )
-# end
+Review.destroy_all
+30.times do 
+    Review.create(
+        title: Faker::Book.title,
+        content: Faker::Quotes::Shakespeare.hamlet_quote,
+        ratings: rand(1...10),
+        user_id: User.all.sample.id,
+        portfolio_id: Portfolio.all.sample.id
+    )
+end
 
 # stock1 = Stock.create(ticker_symbol: "MSFT", stock_name: "Microsoft", current_price: 170)
 # stock2 = Stock.create(ticker_symbol: "AAPL", stock_name: "Apple", current_price: 295)
@@ -55,6 +55,6 @@
 # stock19 = Stock.create(ticker_symbol: "GE", stock_name: "General Electric", current_price: 10)
 # stock20 = Stock.create(ticker_symbol: "GE", stock_name: "General Electric", current_price: 10)
 
-200.times do 
-    Investment.create(purchase_price: rand(10..300), num_of_shares: rand(10..100), purchase_date: "2020-01-01",portfolio_id: Portfolio.all.sample.id, stock_id: Stock.all.sample.id)
-end
+# 200.times do 
+#     Investment.create(purchase_price: rand(10..300), num_of_shares: rand(10..100), purchase_date: "2020-01-01",portfolio_id: Portfolio.all.sample.id, stock_id: Stock.all.sample.id)
+# end

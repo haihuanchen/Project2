@@ -1,3 +1,20 @@
 <h1>Please create a new Review</h1>
 
-<%= render 'form' %>
+<%= form_for @review do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :content%>
+    <%= f.text_area :content %>
+
+    <%= f.label :ratings %>
+    <%= f.number_field :ratings %>
+
+    <%= f.label :user_id %>
+    <%=f.collection_select :user_id, @users, :id, :full_name, prompt: true %>
+
+
+    <%=f.hidden_field :portfolio_id, value: @portfolio.id %>
+
+    <%= f.submit %>
+<% end %>
