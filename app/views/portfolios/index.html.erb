@@ -3,5 +3,5 @@
 
 <h5>Here are your portfolios: </h5>
 <% @portfolios.each do |portfolio| %>
-   <p><%= link_to portfolio.portfolio_name, portfolio %></p> 
+   <p><%= link_to portfolio.portfolio_name, user_portfolio_path(portfolio.user,portfolio) %></p> 
 <% end %>

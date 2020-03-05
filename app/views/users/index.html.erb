@@ -1,0 +1,7 @@
+<h1 style= "color:green;">Welcome to "Cash Me Outside"</h1>
+
+<% @users.each do |user| %>
+    <h5><%= link_to user.full_name, user %></h5>
+    <%# <h5><%= user.reviews.title %> </h5>
+<% end %>
+

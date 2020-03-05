@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
+  resources :users
   resources :reviews
   resources :portfolios
-  resources :stocks
+  resources :stocks, only: [:new, :create]
   resources :investments
-  resources :users do
-    resources :portfolios
-  end
 
-
-  # get "/login", to: "sessions#new"
-  # post "/login", to: "sessions#create"
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  # delete 'logout', to: "sessions#destroy", as "logout"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
