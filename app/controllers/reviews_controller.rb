@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
 
     def destroy
         @review.destroy
-        redirect_to reviews_path
+        redirect_to users_path
     end
 
     private
@@ -40,7 +40,7 @@ class ReviewsController < ApplicationController
     end
 
     def find_review
-        @review = review.find(params[:id])
+        @review = Review.find(params[:id])
     end
 
 end
