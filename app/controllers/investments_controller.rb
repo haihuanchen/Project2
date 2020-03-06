@@ -11,16 +11,16 @@ class InvestmentsController < ApplicationController
 
     def new
         @portfolios = Portfolio.all
-        @stocks = Stock.all
+        @stock = Stock.find(params[:stock_id])
         @investment = Investment.new
     end
 
     def create
+        @stock = Stock.find(params[:stock_id])
         @portfolios = Portfolio.all
-        @stocks = Stock.all
-        @investment = Invesment.create(investment_params)
-        @investment.save
-        redirect_to portfolio_path(@investment.portfolio)
+        @investment = Investment.new(investment_params)
+        @investment.update(purchase_price: @stock.current_price, stock_id: @stock.id, purchase_date: Stock.current_date_to_YYYYMMDD)
+        redirect_to portfolio_path(@investment.portfolio_id)
     end
 
     private

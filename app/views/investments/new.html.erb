@@ -1,11 +1,12 @@
-<%= form_for @investment do |f| %>
+<h5>STOCK:<%= @stock.stock_name%> </h5>
+<h5>CURRENT PRICE:<%= @stock.current_price%> </h5>
 
-Portfolio: <%= collection_select(:portfolio, :id, @portfolios, :id, :portfolio_name) %>
-<br>
-Stock: <%= collection_select(:stock, :id, @stocks, :id, :stock_name) %>
-<br>
-<%= f.label :purchase_price, "Price" %>
-<%= f.number_field (:purchase_price) %>
+<%= form_for [@stock, @investment] do |f| %>
+<%= f.label :portfolio_id %>
+<%= f.collection_select(:portfolio_id, Portfolio.all, :id, :portfolio_name) %><br>
+
+<%= f.label :num_of_shares, "Shares" %>
+<%= f.number_field (:num_of_shares) %>
 
 <%= f.submit %>
 <% end %>
