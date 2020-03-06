@@ -5,8 +5,10 @@ class StocksController < ApplicationController
     end
 
     def create
-        @stock = Stock.create(stock_params)
-        redirect_to new_stock_path
+        current_price = Stock.get_current_stock_price(stock_params[:ticker_symbol])
+        @stock = Stock.new(stock_params)
+        @stock.update(current_price: current_price)
+        redirect_to new_stock_investment_path(@stock)
     end
 
     private

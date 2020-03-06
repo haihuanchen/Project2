@@ -15,15 +15,15 @@
 #     )
 # end
 
-30.times do 
-    Review.create(
-        title: Faker::Book.title,
-        content: Faker::Quotes::Shakespeare.hamlet_quote,
-        ratings: rand(1...10),
-        user_id: User.all.sample.id,
-        portfolio_id: Portfolio.all.sample.id
-    )
-end
+# 30.times do 
+#     Review.create(
+#         title: Faker::Book.title,
+#         content: Faker::Quotes::Shakespeare.hamlet_quote,
+#         ratings: rand(1...10),
+#         user_id: User.all.sample.id,
+#         portfolio_id: Portfolio.all.sample.id
+#     )
+# end
 
 stock1 = Stock.create(ticker_symbol: "MSFT", stock_name: "Microsoft", current_price: 170)
 stock2 = Stock.create(ticker_symbol: "AAPL", stock_name: "Apple", current_price: 295)
