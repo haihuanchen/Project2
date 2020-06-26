@@ -2,6 +2,8 @@ Cash Me Outside
 
 A web application that helps investors understand the stock market and make simple stock investments
 
+Video Demo of this project: https://www.loom.com/share/e18c0e383e6f40d18abb29dd797aa973
+
 Prerequisites
 
 Before you begin, ensure you have met the following requirements:
